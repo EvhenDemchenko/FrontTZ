@@ -30,11 +30,11 @@ function App() {
     useEffect(() => {
         if (data) {
             setValueItems(data)
-            toast(data.Message);
+            toast.success(data.Message, {theme:'colored'});
         }
         if (variableData) {
             setVariableDataList(variableData.Results)
-            toast(variableData.Message)
+            toast.info(variableData.Message, {theme:'colored'})
         }
         if (data && variableData) dispatch(setReducedItems())
 

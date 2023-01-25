@@ -1,13 +1,13 @@
 type IProps = {
     arr: Array<string>,
-    fetchVehicleVinData: (params: string) => void
+    fetchVehicleVinData: (params: string, isHistory: boolean) => void
 }
 
 export const LastQueriesModal = (props: IProps) => {
     const {arr, fetchVehicleVinData} = props
 
     const fetchVehicleByVinQuery = (event: any) => {
-        fetchVehicleVinData(event.target.innerText)
+        fetchVehicleVinData(event.target.innerText, true)
     }
     return (
         <>
