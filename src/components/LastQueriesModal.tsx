@@ -1,13 +1,15 @@
 type IProps = {
     arr: Array<string>,
     fetchVehicleVinData: (params: string, isHistory: boolean) => void
+    setSearchedValue:(url:string)=>void
 }
 
 export const LastQueriesModal = (props: IProps) => {
-    const {arr, fetchVehicleVinData} = props
+    const {arr, fetchVehicleVinData, setSearchedValue} = props
 
     const fetchVehicleByVinQuery = (event: any) => {
         fetchVehicleVinData(event.target.innerText, true)
+        setSearchedValue(event.target.innerHTML)
     }
     return (
         <>

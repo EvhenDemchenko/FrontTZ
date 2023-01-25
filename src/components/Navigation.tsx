@@ -64,6 +64,7 @@ export const Navigation = (props: IProps) => {
                 />
                 {modalState && <LastQueriesModal
                     arr={history}
+                    setSearchedValue={setSearchedValue}
                     fetchVehicleVinData={fetchVehicleVinData}
                 />}
             </div>
