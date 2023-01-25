@@ -1,5 +1,5 @@
 import {vinDecoderActions} from '../vinDecoder.slice'
-import {IReducedItems, IResult, IVariableResult} from "../../models/model";
+import {IReducedItems, IValueResults, IVariableResult} from "../../models/model";
 import {ThunkAction} from "redux-thunk";
 import {RootState} from "../index";
 import {AnyAction} from "@reduxjs/toolkit";
@@ -9,7 +9,7 @@ export const setReducedItems = () => (dispatch: any, getState: () => any): Thunk
     const validItems = getState().vinDecoder.valueItems
     const variableItems = getState().vinDecoder.variableList
 
-    const res = validItems.map((item: IResult) => {
+    const res = validItems.map((item: IValueResults) => {
         const {ValueId, Value, Variable, VariableId} = item;
         let filtered: IReducedItems = variableItems.reduce((acc: any, data: IVariableResult) => {
             if (data.ID === VariableId) {

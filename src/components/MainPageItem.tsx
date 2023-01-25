@@ -1,8 +1,8 @@
 //models
-import {IResult} from "../models/model";
+import {IValueResults} from "../models/model";
 
 type IProps = {
-    VehicleValues: IResult
+    VehicleValues: IValueResults
 }
 export const MainPageItem = (props: IProps) => {
     const {Value, Variable} = props.VehicleValues

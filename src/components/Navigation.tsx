@@ -38,7 +38,7 @@ export const Navigation = (props: IProps) => {
                     className='heading_input'
                     ref={modalRef}
                     maxLength={17}
-                    placeholder='Type vin...'
+                    placeholder='Type VIN code...'
                     value={searchedValue}
                     onChange={e => setSearchedValue(e.target.value)}
                 />

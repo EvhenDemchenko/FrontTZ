@@ -314,19 +314,18 @@ $shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 table.paleBlueRows {
   box-shadow: $shadow-lg;
   width: 100%;
-  text-align: center;
-  //border-collapse: collapse;
-}
+  text-align: center;}
 
 table.paleBlueRows td, table.paleBlueRows th {
-  width: 30vw;
+  max-width: 25vw;
   border: 1px solid $border-bg;
-  padding: 3px 2px;
+  padding: 3px 1px;
 }
 
 table.paleBlueRows tbody td {
-  font-size: 1rem;
+  font-size: 0.9rem;
   padding: 10px 0;
+  overflow-x: auto;
 }
 
 table.paleBlueRows tr:nth-child(even) {
