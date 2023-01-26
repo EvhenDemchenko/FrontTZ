@@ -34,7 +34,7 @@ function App() {
         }
         if (variableData) {
             setVariableDataList(variableData.Results)
-            toast.info(variableData.Message, {theme:'colored'})
+            // toast.info(variableData.Message, {theme:'colored'})
         }
         if (data && variableData) dispatch(setReducedItems())
 
