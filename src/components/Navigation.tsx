@@ -27,8 +27,8 @@ export const Navigation = (props: IProps) => {
     const modalState = useAppSelector(state => state.vinDecoder.modalState)
 
 
-    const fetchVehicleVinData = (params : string, isHistory:boolean = false ) => {
-        if(!isHistory){
+    const fetchVehicleVinData = (params: string, isHistory: boolean = false) => {
+        if (!isHistory) {
             if (!isValid) {
                 toast.error('incorrect data in the input field', {theme: 'colored', autoClose: 3000})
                 toast.error('incorrect invalid VIN format ', {theme: 'colored', autoClose: 4000,})
@@ -53,11 +53,12 @@ export const Navigation = (props: IProps) => {
 
     return (
         <nav className='heading'>
-            <div className='heading_container'>
+            <form onSubmit={e => e.preventDefault()} className='heading_container'>
                 <input
                     className='heading_input'
                     ref={modalRef}
                     maxLength={17}
+                    name='vin'
                     placeholder='Type VIN code...'
                     value={searchedValue}
                     onChange={inputValidation}
@@ -67,13 +68,15 @@ export const Navigation = (props: IProps) => {
                     setSearchedValue={setSearchedValue}
                     fetchVehicleVinData={fetchVehicleVinData}
                 />}
-            </div>
-            <button className='heading_btn'
-                    disabled={(searchedValue.length !== 17) && !isValid}
-                    onClick={() => fetchVehicleVinData(searchedValue)}
-            >
-                Search
-            </button>
+                <button className='heading_btn'
+                        type="submit"
+                        disabled={(searchedValue.length !== 17) && !isValid}
+                        onClick={() => fetchVehicleVinData(searchedValue)}
+                >
+                    Search
+                </button>
+            </form>
+
         </nav>
     )
 }

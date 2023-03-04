@@ -86,6 +86,7 @@ input {
 
 .heading_container {
   position: relative;
+  display: flex;
   width: 70%;
 }
 
